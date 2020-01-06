@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
-import { Image } from "react-native";
 import { Box, Text } from "react-native-design-utility";
-import { images } from "../constants/images";
+
+import OnboardingLogo from "../commons/OnboardingLogo";
 
 const SplashScreen = ({ navigation }) => {
   const checkAuth = () => {
-    setTimeout(() => {
-      navigation.navigate("Auth"), 2000;
-    });
+    navigation.navigate("Auth");
+    // setTimeout(() => {
+    //   navigation.navigate("Auth"), 2000;
+    // });
   };
 
   useEffect(() => {
@@ -16,18 +17,7 @@ const SplashScreen = ({ navigation }) => {
 
   return (
     <Box f={1} center>
-      <Box mb="sm">
-        <Image source={images.logo} />
-      </Box>
-      <Box mb="sm">
-        <Text size="2xl">
-          Ca
-          <Text size="2xl" color="green">
-            Store
-          </Text>
-        </Text>
-      </Box>
-      <Text size="sm">shopping made easy</Text>
+      <OnboardingLogo />
     </Box>
   );
 };
