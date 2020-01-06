@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Text } from "react-native-design-utility";
 
-const SplashScreen = () => {
+const SplashScreen = ({ navigation }) => {
+  const checkAuth = () => {
+    setTimeout(() => {
+      navigation.navigate("Auth"), 2000;
+    });
+  };
+
+  useEffect(() => {
+    checkAuth();
+  }, []);
+
   return (
     <Box f={1} center>
       <Text>Splash Screen</Text>
