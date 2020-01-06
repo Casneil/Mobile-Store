@@ -1,8 +1,10 @@
 import React from "react";
 import { Box, Text } from "react-native-design-utility";
 import { TouchableOpacity } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
 import { Image } from "react-native";
 import { images } from "../constants/images";
+import { theme } from "../constants/theme";
 
 const bgColor = type => {
   switch (type) {
@@ -31,6 +33,9 @@ const LoginButton = ({ children, type }) => (
       <Box mr="sm">
         <Box bg="white" h={32} w={32} radius="xs" center>
           {type === "google" && <Image source={images.googleColorIcon} />}
+          {type === "facebook" && (
+            <FontAwesome name="facebook" color={theme.color.facebookBlue} />
+          )}
         </Box>
       </Box>
       <Box>
