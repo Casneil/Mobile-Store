@@ -7,9 +7,16 @@ import LoginScreen from "./LoginScreen";
 import HomeScreen from "./HomeScreen";
 import SplashScreen from "./SplashScreen";
 
-const AuthNavigator = createStackNavigator({
-  Login: LoginScreen
-});
+const AuthNavigator = createStackNavigator(
+  {
+    Login: LoginScreen
+  },
+  {
+    defaultNavigationOptions: {
+      header: false
+    }
+  }
+);
 
 const TabNavigator = createBottomTabNavigator({
   Home: HomeScreen
