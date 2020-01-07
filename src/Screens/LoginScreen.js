@@ -23,7 +23,8 @@ class LoginScreen extends React.Component {
   opacityAnimation = () => {
     Animated.timing(this.state.opacity, {
       toValue: 1,
-      duration: 200
+      duration: 200,
+      delay: 200
     }).start();
   };
 
@@ -39,6 +40,10 @@ class LoginScreen extends React.Component {
 
   /*************useEffect***************/
   componentDidMount() {
+    Animated.parallel([
+      this.opacityAnimation(),
+      this.positionAniation()
+    ]).start();
     this.opacityAnimation();
     this.positionAniation();
   }
