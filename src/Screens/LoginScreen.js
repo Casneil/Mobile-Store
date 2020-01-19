@@ -3,7 +3,8 @@ import { Alert, Animated } from "react-native";
 import { Box } from "react-native-design-utility";
 import OnboardingLogo from "../commons/OnboardingLogo";
 import LoginButton from "../commons/LoginButton";
-import { render } from "react-dom";
+
+const BoxAnimated = Animated.createAnimatedComponent(Box);
 
 class LoginScreen extends React.Component {
   state = {
@@ -60,9 +61,9 @@ class LoginScreen extends React.Component {
 
     return (
       <Box f={1} bg="white" center>
-        <Animated.View
+        <BoxAnimated
+          f={1}
           style={{
-            flex: 1,
             transform: [
               {
                 translateY: logoTranslate
@@ -73,16 +74,16 @@ class LoginScreen extends React.Component {
           <Box f={1} center>
             <OnboardingLogo />
           </Box>
-        </Animated.View>
+        </BoxAnimated>
 
-        <Animated.View style={{ flex: 0.9, width: "100%", opacity }}>
+        <BoxAnimated f={0.9} w={1} style={{ opacity }}>
           <LoginButton onPress={this.onGooglePress} type="google">
             Continue with Google
           </LoginButton>
           <LoginButton onPress={this.onFacebookPress} type="facebook">
             Continue with Facebook
           </LoginButton>
-        </Animated.View>
+        </BoxAnimated>
       </Box>
     );
   }
