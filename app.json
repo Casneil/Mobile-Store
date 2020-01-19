@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Cas-Store",
-    "slug": "Cas-Store",
+    "name": "CasStore",
+    "slug": "CasStore",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": ["ios", "android", "web"],
@@ -22,6 +22,12 @@
     },
     "facebookAppId": "1035357573517060",
     "facebookScheme": "fb1035357573517060",
-    "facebookDisplayName": "CasStore"
+    "facebookDisplayName": "CasStore",
+    "extra": {
+      "googleAppId": {
+        "ios": "464311778689-kkke3uamt8abvuc49lrq2e3b0rnv13pb.apps.googleusercontent.com",
+        "android": "464311778689-jt58s02epm40nq6p0vc3klp7qsolpotm.apps.googleusercontent.com"
+      }
+    }
   }
 }

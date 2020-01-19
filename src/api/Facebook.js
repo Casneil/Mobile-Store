@@ -5,9 +5,11 @@ const permissions = ["public_profile", "email"];
 
 const loginAsync = async () => {
   try {
-    const { type, token } = await Facebook.logInWithReadPermissionsAsync(
+    const {
+      type,
+      token
+    } = await Facebook.logInWithReadPermissionsAsync(
       Constants.manifest.FacebookApi,
-      //   "1035357573517060",
       { permissions }
     );
 
