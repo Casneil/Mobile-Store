@@ -4,6 +4,7 @@ import { Box } from "react-native-design-utility";
 import OnboardingLogo from "../commons/OnboardingLogo";
 import LoginButton from "../commons/LoginButton";
 import { FacebookApi } from "../api/Facebook";
+import { GoogleApi } from "../api/Google";
 
 class LoginScreen extends React.Component {
   state = {
@@ -12,8 +13,13 @@ class LoginScreen extends React.Component {
   };
 
   /*************Fuctions***************/
-  onGooglePress = () => {
-    Alert.alert("Google");
+  onGooglePress = async () => {
+    try {
+      const token = await GoogleApi.loginAsync();
+      console.log("Token: ", token);
+    } catch (error) {
+      console.log("error: ", error);
+    }
   };
 
   onFacebookPress = async () => {
