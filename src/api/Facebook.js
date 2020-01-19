@@ -1,16 +1,20 @@
-import { Facebook, Constants } from "expo";
+import Constants from "expo-constants";
+import * as Facebook from "expo-facebook";
 
 const permissions = ["public_profile", "email"];
 
 const loginAsync = async () => {
   try {
-    const {
-      type,
-      token
-    } = await Facebook.logInWithReadPermissionsAsync(
+    const { type, token } = await Facebook.logInWithReadPermissionsAsync(
       Constants.manifest.FacebookApi,
+      //   "1035357573517060",
       { permissions }
     );
+
+    if (type === "success") {
+      return Promise.resolve(token);
+    }
+    return Promise.reject("No success");
   } catch (error) {
     return Promise.reject(error);
   }

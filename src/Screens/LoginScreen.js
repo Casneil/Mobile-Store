@@ -3,6 +3,7 @@ import { Alert, Animated } from "react-native";
 import { Box } from "react-native-design-utility";
 import OnboardingLogo from "../commons/OnboardingLogo";
 import LoginButton from "../commons/LoginButton";
+import { FacebookApi } from "../api/Facebook";
 
 class LoginScreen extends React.Component {
   state = {
@@ -15,8 +16,13 @@ class LoginScreen extends React.Component {
     Alert.alert("Google");
   };
 
-  onFacebookPress = () => {
-    Alert.alert("Facebook");
+  onFacebookPress = async () => {
+    try {
+      const token = await FacebookApi.loginAsync();
+      console.log("Token: ", token);
+    } catch (error) {
+      console.log("error: ", error);
+    }
   };
 
   opacityAnimation = () => {
